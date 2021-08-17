@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scroll-padding: 70px;
+    /* firefox */
+    scrollbar-width: none;
+}
+
+/* chrome */
+::-webkit-scrollbar {
+    width: 0; 
+}
+
+ol, ul, li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+p{
+    display: block;
+}
+
+.app{
+    height: 100vh;
+
+}
+.section{
+    width: 100%;
+    height: calc(100vh - 70px);
+    top: 70px;
+}
+
+
+.section-child{
+    width: 100vw;
+    height: calc(100vh - 70px);
+    top: 70px;
+    scroll-snap-align: start;
+}
