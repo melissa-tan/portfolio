@@ -1,21 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./style.css"
 
 
-export default function header() {
+
+export default function Header() {
+
+    const [activeBurger, setActiveBurger] = useState("");
+    const [activeMenu, setActiveMenu] = useState(false);
+    const toggleMenu = () => {
+        setActiveMenu(!activeMenu);
+        setActiveBurger(activeMenu ? "active" : "")
+    }
     return (
         <div className="header">
             <div className="wrapper">
                 <div className="left">
                     <a href="#home">Melissa</a>
                 </div>
-                <div className="right">
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                <div className={`right ${activeBurger}`} onClick={toggleMenu}>
+                    <i className="burger"></i>
                 </div>
 
-                <aside className="sidebar">
+                <aside className={`sidebar ${activeBurger}`} onClick={toggleMenu}>
                     <nav className="sidebar-menu">
                         <a href="#home">Home</a>
                         <a href="#about">About me</a>

@@ -33,17 +33,62 @@ a:active{
 }
 
 .right{
-
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
+    transition: all .5s ease-in-out;
+    z-index: 5;
 }
 
-.right i{
-    display: block;
-    width: 42px;
-    height: 2px;
-    margin: 8px;
+.burger{
+    width: 33px;
+    height: 3px;
+    margin: 4px;
     background-color: lightblue;
+    transition: all .5s ease-in-out;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px white;
+    z-index: 5;
 }
+
+.burger::before,
+.burger::after{
+    content: "";
+    position: absolute;
+    width: 33px;
+    height: 3px;
+    background-color: lightblue;
+    transition: all .5s ease-in-out;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px white;
+    z-index: 5;
+}
+
+.burger::before{
+    transform: translateY(-14px);
+}
+
+.burger::after{
+    transform: translateY(14px);
+}
+
+/* Animation for menu */
+.right.active .burger{
+    transform: translateX(-50px);
+    background-color: transparent;
+    box-shadow: none;
+}
+.right.active .burger::before{
+    transform: rotate(45deg) translate(35px, -35px);
+}
+.right.active .burger::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
 
 .sidebar{
     height: 100vh;
@@ -53,13 +98,20 @@ a:active{
     position: absolute;
     top: 0;
     right: 0;
+    transform: translateX(100%);
+    transition: all .5s ease-in-out;
+}
+
+.sidebar.active{
+    transition: all .5s ease-in-out;
+    transform: translateX(0);
 }
 
 .sidebar-menu{
     font-size: 2rem;
-    border: 1px solid red;
-    top: 10%;
+    top: 8%;
     height: 80vh;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -70,4 +122,29 @@ a:active{
 }
 .sidebar-menu a{
     margin-top: 30px;
+    position: relative;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar-menu a:hover{
+    color: white;
+}
+
+.sidebar-menu a::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform: translateX(200%) scaleX(0);
+    transform-origin: top right;
+    transition: transform 0.5s ease;
+}
+
+.sidebar-menu a:hover::before{
+    transform: translateX(0) scaleX(1);
 }
