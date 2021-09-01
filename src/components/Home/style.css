@@ -1,4 +1,49 @@
 .home{
-    background-color: lightgreen;
+    background-color: white;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-top{
+    display: flex;
+}
+.home-image{
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0;
+    padding-left: 5%; 
+}
+
+img{
+    width: 700px;
+    height: 700px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+}
+.home-text{
+    flex: 0.5;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-left: 5%;
+}
+
+.home-bottom{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: rgb(197, 197, 197);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.home-bottom:hover{
+    transform: translateY(5px);
+    color: rgb(71, 71, 71);
+
 }

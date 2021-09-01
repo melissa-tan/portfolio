@@ -13,9 +13,9 @@ export default function Header() {
     }
     return (
         <div className="header">
-            <div className="wrapper">
+            <div className={`wrapper ${activeBurger}`}>
                 <div className="left">
-                    <a href="#home">Melissa</a>
+                    <a href="#home" className="cursive">.Melissa</a>
                 </div>
                 <div className={`right ${activeBurger}`} onClick={toggleMenu}>
                     <i className="burger"></i>
