@@ -13,7 +13,13 @@ export default function Header() {
     <div className="header">
       <div className={`wrapper ${activeBurger}`}>
         <div className="left">
-          <a href="#home" className="cursive">
+          <a
+            href="#home"
+            className="cursive"
+            onClick={() => {
+              setActiveBurger("");
+            }}
+          >
             Melissa
           </a>
         </div>
@@ -22,12 +28,12 @@ export default function Header() {
         </div>
 
         <aside className={`sidebar ${activeBurger}`} onClick={toggleMenu}>
-            <nav className="sidebar-menu">
-              <a href="#home">Home</a>
+          <nav className="sidebar-menu">
+            <a href="#home">Home</a>
             <a href="#about">About me</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
-            </nav>
+          </nav>
           <label for="menu-control">
             <span className="sidebar-close"></span>
           </label>

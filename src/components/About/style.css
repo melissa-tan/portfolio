@@ -1,4 +1,22 @@
 .about{
-    margin: 28%;
+    margin: 25%;
     height: 100vh;
 }
+
+.tech-display{
+    margin-right: 200px;
+}
+.left-tech{
+    float: left;
+    padding: 10px;
+}
+.right-tech{
+    float: right;
+    padding: 10px;
+}
+
+.bullet{
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
